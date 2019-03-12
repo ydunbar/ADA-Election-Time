@@ -17,7 +17,7 @@ Election candidates are: Donald Duck, Minnie Mouse, Goofy"
 votes = []
 # Loop to take user votes
 10.times do |i|
-  puts "Vote #{i}"
+  puts "Vote #{i+1}:"
   vote = gets.chomp.capitalize
   votes.push(vote)
 end
@@ -32,6 +32,7 @@ donald_vote_count = 0
 minnie_vote_count = 0
 goofy_vote_count = 0
 
+# not working correctly?
 votes.each do |i|
   if [i] == "Donald Duck" || "Donald duck"
     donald_vote_count +=1
@@ -42,19 +43,19 @@ votes.each do |i|
 end
 
 if donald_vote_count > 0
-  puts "Donald Duck - " + donald_vote_count "vote(s)"
+  puts "Donald Duck - #{donald_vote_count} vote(s)"
 end
 
 if minnie_vote_count > 0
-  puts "Minnie Mouse - " + minnie_vote_count "vote(s)"
+  puts "Minnie Mouse - #{minnie_vote_count} vote(s)"
 end
 
 if goofy_vote_count > 0
-  puts "Goofy - " + goofy_vote_count "vote(s)"
+  puts "Goofy - #{goofy_vote_count} vote(s)"
 end
 
 # Output election result
-winner = null
+winner = 0
 
 if donald_vote_count > minnie_vote_count && donald_vote_count > goofy_vote_count
   winner = "Donald Duck"
@@ -64,4 +65,5 @@ elsif goofy_vote_count > donald_vote_count && goofy_vote_count > minnie_vote_cou
   winner = "Goofy"
 end
 
-puts "Winner: " + winner "!"
+puts "Winner: #{winner}!"
+end
